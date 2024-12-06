@@ -88,7 +88,9 @@ pip install robotframework-seleniumlibrary
 
 Execute a suíte de testes com o comando:
 ```
-robot -t "Nome do Caso de Teste" /cadastro.robot
+robot -d ./logs cadastro.robot
+ou
+python -m robot -d ./logs cadastro.robot
 ```
 
 Contribua com o Projeto 🙌
