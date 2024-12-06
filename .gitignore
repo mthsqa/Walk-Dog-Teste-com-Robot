@@ -1,17 +1,26 @@
-# Ignorar arquivos e pastas temporárias
+# Ignorar arquivos de logs
 *.log
-*.tmp
+
+# Ignorar diretórios de cache
+.cache/
+.pytest_cache/
+
+# Ignorar arquivos de configuração do VSCode
+.vscode/
+
+# Ignorar arquivos do sistema operacional
+.DS_Store
+Thumbs.db
+
+# Ignorar dependências do Python
+__pycache__/
+*.pyc
+
+# Ignorar diretórios do Robot Framework
+output/
+log/
+report/
+
+# Ignorar arquivos de testes temporários
 *.bak
 *.swp
-
-# Ignorar dependências
-/node_modules/
-/venv/
-
-# Ignorar arquivos de compilação
-/dist/
-/build/
-
-# Ignorar configurações de IDEs
-.vscode/
-/.idea/
