@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.1.1 (Python 3.13.0 on win32)" generated="2024-12-06T09:31:42.830826" rpa="false" schemaversion="5">
+<suite id="s1" name="Walkdog" source="C:\QAx\projects\walkdog">
+<suite id="s1-s1" name="Cadastro" source="C:\QAx\projects\walkdog\cadastro.robot">
+<test id="s1-s1-t1" name="Cadastro de Dog Walkers com Sucesso" line="9">
+<kw name="Start session" owner="base" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:43.045430" level="INFO">Opening browser 'Chrome' to base url 'https://walkdog.vercel.app/signup'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T09:31:43.045124" elapsed="2.032344"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.077729" elapsed="0.030747"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:31:43.044456" elapsed="2.064313"/>
+</kw>
+<kw name="Fill signup form" owner="SignupPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.110377" level="INFO">Typing text 'Matheus Silva' into text field 'css=input[name="name"]'.</msg>
+<arg>css=input[name="name"]</arg>
+<arg>${NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.109894" elapsed="0.121220"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.231702" level="INFO">Typing text 'matheus-qa@example.com' into text field 'css=input[name="email"]'.</msg>
+<arg>css=input[name="email"]</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.231329" elapsed="0.086234"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.318164" level="INFO">Typing text '00000014141' into text field 'css=input[name="cpf"]'.</msg>
+<arg>css=input[name="cpf"]</arg>
+<arg>${CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.317798" elapsed="0.070279"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.388904" level="INFO">Typing text '04534011' into text field 'css=input[name="cep"]'.</msg>
+<arg>css=input[name="cep"]</arg>
+<arg>${CEP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.388312" elapsed="0.066524"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.456251" level="INFO">Typing text '1000' into text field 'css=input[name="addressNumber"]'.</msg>
+<arg>css=input[name="addressNumber"]</arg>
+<arg>${NUMBER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.455425" elapsed="0.056610"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.512628" level="INFO">Typing text 'Apt 101' into text field 'css=input[name="addressDetails"]'.</msg>
+<arg>css=input[name="addressDetails"]</arg>
+<arg>${DETAILS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.512248" elapsed="0.067177"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.579994" level="INFO">Sending C:\QAx\projects\walkdog\fixtures\document.png to browser.</msg>
+<arg>css=input[type="file"]</arg>
+<arg>${EXECDIR}/fixtures/document.png</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.579631" elapsed="0.026522"/>
+</kw>
+<arg>Matheus Silva</arg>
+<arg>matheus-qa@example.com</arg>
+<arg>00000014141</arg>
+<arg>04534011</arg>
+<arg>1000</arg>
+<arg>Apt 101</arg>
+<status status="PASS" start="2024-12-06T09:31:45.109272" elapsed="0.497122"/>
+</kw>
+<kw name="Submit signup form" owner="SignupPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:45.607489" level="INFO">Clicking element 'xpath=//button[contains(text(), "Cadastrar")]'.</msg>
+<arg>xpath=//button[contains(text(), "Cadastrar")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.607254" elapsed="0.063211"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:31:45.606813" elapsed="0.063820"/>
+</kw>
+<kw name="Popup have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:31:45.671694" level="INFO">${element} = xpath=//div[@class="swal2-html-container"]</msg>
+<var>${element}</var>
+<arg>xpath=//div[@class="swal2-html-container"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.671442" elapsed="0.000895"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:31:45.672725" elapsed="0.632915"/>
+</kw>
+<kw name="Element Should Contain" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:46.322016" level="INFO">Element 'xpath=//div[@class="swal2-html-container"]' contains text 'Recebemos o seu cadastro e em breve retornaremos o contato.'.</msg>
+<arg>${element}</arg>
+<arg>${expected_text}</arg>
+<doc>Verifies that element ``locator`` contains text ``expected``.</doc>
+<status status="PASS" start="2024-12-06T09:31:46.305963" elapsed="0.016471"/>
+</kw>
+<arg>Recebemos o seu cadastro e em breve retornaremos o contato.</arg>
+<status status="PASS" start="2024-12-06T09:31:45.670996" elapsed="0.651651"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T09:31:51.324081" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T09:31:46.323139" elapsed="5.001278"/>
+</kw>
+<kw name="Finish session" owner="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:51.470005" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-17.png"&gt;&lt;img src="selenium-screenshot-17.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-12-06T09:31:51.325393" elapsed="0.144871"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-06T09:31:51.470454" elapsed="2.149291"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:31:51.324929" elapsed="2.295018"/>
+</kw>
+<doc>Cadastro de Dog Walkers com sucesso</doc>
+<tag>happy_path</tag>
+<status status="PASS" start="2024-12-06T09:31:43.043618" elapsed="10.576571"/>
+</test>
+<test id="s1-s1-t2" name="CPF Incorreto" line="19">
+<kw name="Start session" owner="base" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:53.622773" level="INFO">Opening browser 'Chrome' to base url 'https://walkdog.vercel.app/signup'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T09:31:53.622475" elapsed="1.961709"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-12-06T09:31:55.584416" elapsed="0.035651"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:31:53.621991" elapsed="1.998252"/>
+</kw>
+<kw name="Fill signup form" owner="SignupPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:55.621627" level="INFO">Typing text 'Matheus Silva' into text field 'css=input[name="name"]'.</msg>
+<arg>css=input[name="name"]</arg>
+<arg>${NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:55.621307" elapsed="0.099654"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:55.721706" level="INFO">Typing text 'matheus-qa@example.com' into text field 'css=input[name="email"]'.</msg>
+<arg>css=input[name="email"]</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:55.721176" elapsed="0.086682"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:55.808430" level="INFO">Typing text '00000014141a' into text field 'css=input[name="cpf"]'.</msg>
+<arg>css=input[name="cpf"]</arg>
+<arg>${CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:55.808066" elapsed="0.090354"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:55.898990" level="INFO">Typing text '04534011' into text field 'css=input[name="cep"]'.</msg>
+<arg>css=input[name="cep"]</arg>
+<arg>${CEP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:55.898633" elapsed="0.061623"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:55.960823" level="INFO">Typing text '1000' into text field 'css=input[name="addressNumber"]'.</msg>
+<arg>css=input[name="addressNumber"]</arg>
+<arg>${NUMBER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:55.960464" elapsed="0.054917"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:56.016028" level="INFO">Typing text 'Apt 101' into text field 'css=input[name="addressDetails"]'.</msg>
+<arg>css=input[name="addressDetails"]</arg>
+<arg>${DETAILS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:56.015636" elapsed="0.062536"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:56.078747" level="INFO">Sending C:\QAx\projects\walkdog\fixtures\document.png to browser.</msg>
+<arg>css=input[type="file"]</arg>
+<arg>${EXECDIR}/fixtures/document.png</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:56.078381" elapsed="0.024465"/>
+</kw>
+<arg>Matheus Silva</arg>
+<arg>matheus-qa@example.com</arg>
+<arg>00000014141a</arg>
+<arg>04534011</arg>
+<arg>1000</arg>
+<arg>Apt 101</arg>
+<status status="PASS" start="2024-12-06T09:31:55.620638" elapsed="0.482369"/>
+</kw>
+<kw name="Submit signup form" owner="SignupPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:56.103928" level="INFO">Clicking element 'xpath=//button[contains(text(), "Cadastrar")]'.</msg>
+<arg>xpath=//button[contains(text(), "Cadastrar")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:31:56.103641" elapsed="0.058333"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:31:56.103286" elapsed="0.058883"/>
+</kw>
+<kw name="Alert have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:31:56.163382" level="INFO">${element} = xpath=//span[@class="alert-error"][text()="CPF inválido"]</msg>
+<var>${element}</var>
+<arg>xpath=//span[@class="alert-error"][text()="${expected_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:31:56.163105" elapsed="0.000508"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:31:56.163752" elapsed="0.016379"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:31:56.257841" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-12.png"&gt;&lt;img src="selenium-element-screenshot-12.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${element}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-12-06T09:31:56.180367" elapsed="0.077771"/>
+</kw>
+<arg>CPF inválido</arg>
+<status status="PASS" start="2024-12-06T09:31:56.162597" elapsed="0.095680"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T09:32:01.259199" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T09:31:56.258568" elapsed="5.000953"/>
+</kw>
+<kw name="Finish session" owner="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:01.400617" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-18.png"&gt;&lt;img src="selenium-screenshot-18.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:01.260415" elapsed="0.140545"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-06T09:32:01.401148" elapsed="2.163401"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:32:01.260027" elapsed="2.304709"/>
+</kw>
+<doc>Teste de CPF incorreto</doc>
+<tag>cpf_inv</tag>
+<status status="PASS" start="2024-12-06T09:31:53.621054" elapsed="9.943872"/>
+</test>
+<test id="s1-s1-t3" name="Email Incorreto" line="28">
+<kw name="Start session" owner="base" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:03.567081" level="INFO">Opening browser 'Chrome' to base url 'https://walkdog.vercel.app/signup'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T09:32:03.566833" elapsed="1.816226"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.383299" elapsed="0.034427"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:32:03.566510" elapsed="1.851382"/>
+</kw>
+<kw name="Fill signup form" owner="SignupPage">
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.418982" level="INFO">Typing text 'Matheus Silva' into text field 'css=input[name="name"]'.</msg>
+<arg>css=input[name="name"]</arg>
+<arg>${NAME}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.418704" elapsed="0.103760"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.523125" level="INFO">Typing text 'matheus-qa!example.com' into text field 'css=input[name="email"]'.</msg>
+<arg>css=input[name="email"]</arg>
+<arg>${EMAIL}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.522713" elapsed="0.095347"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.618631" level="INFO">Typing text '00000014141' into text field 'css=input[name="cpf"]'.</msg>
+<arg>css=input[name="cpf"]</arg>
+<arg>${CPF}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.618267" elapsed="0.065250"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.684168" level="INFO">Typing text '04534011' into text field 'css=input[name="cep"]'.</msg>
+<arg>css=input[name="cep"]</arg>
+<arg>${CEP}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.683830" elapsed="0.063104"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.747485" level="INFO">Typing text '1000' into text field 'css=input[name="addressNumber"]'.</msg>
+<arg>css=input[name="addressNumber"]</arg>
+<arg>${NUMBER}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.747145" elapsed="0.056378"/>
+</kw>
+<kw name="Input Text" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.804106" level="INFO">Typing text 'Apt 101' into text field 'css=input[name="addressDetails"]'.</msg>
+<arg>css=input[name="addressDetails"]</arg>
+<arg>${DETAILS}</arg>
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.803756" elapsed="0.059633"/>
+</kw>
+<kw name="Choose File" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.863964" level="INFO">Sending C:\QAx\projects\walkdog\fixtures\document.png to browser.</msg>
+<arg>css=input[type="file"]</arg>
+<arg>${EXECDIR}/fixtures/document.png</arg>
+<doc>Inputs the ``file_path`` into the file input field ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.863594" elapsed="0.024134"/>
+</kw>
+<arg>Matheus Silva</arg>
+<arg>matheus-qa!example.com</arg>
+<arg>00000014141</arg>
+<arg>04534011</arg>
+<arg>1000</arg>
+<arg>Apt 101</arg>
+<status status="PASS" start="2024-12-06T09:32:05.418199" elapsed="0.470117"/>
+</kw>
+<kw name="Submit signup form" owner="SignupPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:05.889511" level="INFO">Clicking element 'xpath=//button[contains(text(), "Cadastrar")]'.</msg>
+<arg>xpath=//button[contains(text(), "Cadastrar")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.889259" elapsed="0.057393"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:32:05.888797" elapsed="0.058029"/>
+</kw>
+<kw name="Alert have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:32:05.947759" level="INFO">${element} = xpath=//span[@class="alert-error"][text()="Informe um email válido"]</msg>
+<var>${element}</var>
+<arg>xpath=//span[@class="alert-error"][text()="${expected_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.947501" elapsed="0.000541"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.948252" elapsed="0.015418"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:06.026728" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-13.png"&gt;&lt;img src="selenium-element-screenshot-13.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${element}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:05.963876" elapsed="0.063124"/>
+</kw>
+<arg>Informe um email válido</arg>
+<status status="PASS" start="2024-12-06T09:32:05.947103" elapsed="0.080033"/>
+</kw>
+<kw name="Sleep" owner="BuiltIn">
+<msg time="2024-12-06T09:32:11.027851" level="INFO">Slept 5 seconds.</msg>
+<arg>5</arg>
+<doc>Pauses the test executed for the given time.</doc>
+<status status="PASS" start="2024-12-06T09:32:06.027389" elapsed="5.000833"/>
+</kw>
+<kw name="Finish session" owner="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:11.158586" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-19.png"&gt;&lt;img src="selenium-screenshot-19.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:11.029072" elapsed="0.129792"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-06T09:32:11.159045" elapsed="2.139001"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:32:11.028652" elapsed="2.269580"/>
+</kw>
+<doc>Teste de E-mail incorreto</doc>
+<tag>email_inv</tag>
+<status status="PASS" start="2024-12-06T09:32:03.565840" elapsed="9.732574"/>
+</test>
+<test id="s1-s1-t4" name="Campos Obrigatórios" line="37">
+<kw name="Start session" owner="base" type="SETUP">
+<kw name="Open Browser" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:13.300378" level="INFO">Opening browser 'Chrome' to base url 'https://walkdog.vercel.app/signup'.</msg>
+<arg>${BASE_URL}</arg>
+<arg>${BROWSER}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<status status="PASS" start="2024-12-06T09:32:13.300128" elapsed="1.869383"/>
+</kw>
+<kw name="Set Window Size" owner="SeleniumLibrary">
+<arg>1920</arg>
+<arg>1080</arg>
+<doc>Sets current windows size to given ``width`` and ``height``.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.169734" elapsed="0.028518"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:32:13.299832" elapsed="1.898591"/>
+</kw>
+<kw name="Submit signup form" owner="SignupPage">
+<kw name="Click Element" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:15.199977" level="INFO">Clicking element 'xpath=//button[contains(text(), "Cadastrar")]'.</msg>
+<arg>xpath=//button[contains(text(), "Cadastrar")]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.199236" elapsed="0.067754"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:32:15.198796" elapsed="0.068418"/>
+</kw>
+<kw name="Alert have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:32:15.268296" level="INFO">${element} = xpath=//span[@class="alert-error"][text()="Informe o seu nome completo"]</msg>
+<var>${element}</var>
+<arg>xpath=//span[@class="alert-error"][text()="${expected_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.268046" elapsed="0.000485"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.268746" elapsed="0.016788"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:15.366864" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-14.png"&gt;&lt;img src="selenium-element-screenshot-14.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${element}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.285742" elapsed="0.081437"/>
+</kw>
+<arg>Informe o seu nome completo</arg>
+<status status="PASS" start="2024-12-06T09:32:15.267585" elapsed="0.099738"/>
+</kw>
+<kw name="Alert have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:32:15.368157" level="INFO">${element} = xpath=//span[@class="alert-error"][text()="Informe o seu melhor email"]</msg>
+<var>${element}</var>
+<arg>xpath=//span[@class="alert-error"][text()="${expected_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.367931" elapsed="0.000348"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.368485" elapsed="0.014923"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:15.490132" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-15.png"&gt;&lt;img src="selenium-element-screenshot-15.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${element}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.383619" elapsed="0.106763"/>
+</kw>
+<arg>Informe o seu melhor email</arg>
+<status status="PASS" start="2024-12-06T09:32:15.367618" elapsed="0.122904"/>
+</kw>
+<kw name="Alert have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:32:15.491417" level="INFO">${element} = xpath=//span[@class="alert-error"][text()="Informe o seu CPF"]</msg>
+<var>${element}</var>
+<arg>xpath=//span[@class="alert-error"][text()="${expected_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.491165" elapsed="0.000353"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.491641" elapsed="0.012229"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:15.582542" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-16.png"&gt;&lt;img src="selenium-element-screenshot-16.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${element}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.504252" elapsed="0.078608"/>
+</kw>
+<arg>Informe o seu CPF</arg>
+<status status="PASS" start="2024-12-06T09:32:15.490778" elapsed="0.092232"/>
+</kw>
+<kw name="Alert have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:32:15.584063" level="INFO">${element} = xpath=//span[@class="alert-error"][text()="Informe o seu CEP"]</msg>
+<var>${element}</var>
+<arg>xpath=//span[@class="alert-error"][text()="${expected_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.583812" elapsed="0.000486"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.584460" elapsed="0.013597"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:15.660645" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-17.png"&gt;&lt;img src="selenium-element-screenshot-17.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${element}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.598260" elapsed="0.062688"/>
+</kw>
+<arg>Informe o seu CEP</arg>
+<status status="PASS" start="2024-12-06T09:32:15.583377" elapsed="0.077708"/>
+</kw>
+<kw name="Alert have text" owner="SignupPage">
+<kw name="Set Variable" owner="BuiltIn">
+<msg time="2024-12-06T09:32:15.661951" level="INFO">${element} = xpath=//span[@class="alert-error"][text()="Informe um número maior que zero"]</msg>
+<var>${element}</var>
+<arg>xpath=//span[@class="alert-error"][text()="${expected_text}"]</arg>
+<doc>Returns the given values which can then be assigned to a variables.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.661724" elapsed="0.000321"/>
+</kw>
+<kw name="Wait Until Element Is Visible" owner="SeleniumLibrary">
+<arg>${element}</arg>
+<arg>5</arg>
+<doc>Waits until the element ``locator`` is visible.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.662164" elapsed="0.013800"/>
+</kw>
+<kw name="Capture Element Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:15.753116" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-element-screenshot-18.png"&gt;&lt;img src="selenium-element-screenshot-18.png" width="400px"&gt;&lt;/a&gt;</msg>
+<arg>${element}</arg>
+<doc>Captures a screenshot from the element identified by ``locator`` and embeds it into log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.676169" elapsed="0.077223"/>
+</kw>
+<arg>Informe um número maior que zero</arg>
+<status status="PASS" start="2024-12-06T09:32:15.661405" elapsed="0.092125"/>
+</kw>
+<kw name="Finish session" owner="base" type="TEARDOWN">
+<kw name="Capture Page Screenshot" owner="SeleniumLibrary">
+<msg time="2024-12-06T09:32:15.895191" level="INFO" html="true">&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td colspan="3"&gt;&lt;a href="selenium-screenshot-20.png"&gt;&lt;img src="selenium-screenshot-20.png" width="800px"&gt;&lt;/a&gt;</msg>
+<doc>Takes a screenshot of the current page and embeds it into a log file.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.754589" elapsed="0.140884"/>
+</kw>
+<kw name="Close Browser" owner="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" start="2024-12-06T09:32:15.895647" elapsed="2.125996"/>
+</kw>
+<status status="PASS" start="2024-12-06T09:32:15.753969" elapsed="2.267887"/>
+</kw>
+<doc>Teste de Campos Obrigatórios</doc>
+<tag>required</tag>
+<status status="PASS" start="2024-12-06T09:32:13.299228" elapsed="4.722821"/>
+</test>
+<status status="PASS" start="2024-12-06T09:31:42.850516" elapsed="35.172518"/>
+</suite>
+<status status="PASS" start="2024-12-06T09:31:42.834439" elapsed="35.189764"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">cpf_inv</stat>
+<stat pass="1" fail="0" skip="0">email_inv</stat>
+<stat pass="1" fail="0" skip="0">happy_path</stat>
+<stat pass="1" fail="0" skip="0">required</stat>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Walkdog">Walkdog</stat>
+<stat pass="4" fail="0" skip="0" id="s1-s1" name="Cadastro">Walkdog.Cadastro</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
