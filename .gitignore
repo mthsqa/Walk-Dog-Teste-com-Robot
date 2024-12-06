@@ -1,0 +1,17 @@
+# Ignorar arquivos e pastas temporárias
+*.log
+*.tmp
+*.bak
+*.swp
+
+# Ignorar dependências
+/node_modules/
+/venv/
+
+# Ignorar arquivos de compilação
+/dist/
+/build/
+
+# Ignorar configurações de IDEs
+.vscode/
+/.idea/
